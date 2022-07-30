@@ -1,0 +1,21 @@
+ def ePrimo(num):
+    if(num == 0) or (num == 1):
+        return False
+    else:
+        i = num-1
+        for c in range(i,i>=1,-1):
+            if(num%c==0):
+                return False
+    return True
+ 
+ 
+ numero = 600851475143
+ numero2 = 13195
+ fator= []
+ for c in range(numero, numero<1, -1):
+     if (numero%c==0) and (ePrimo(c)):
+         fator.append(c)
+         print(c)
+
+
+ print(max(fator))
