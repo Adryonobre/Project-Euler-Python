@@ -1,0 +1,9 @@
+ c=0
+ cont=0
+ maximo=0
+ while True:
+     c+=1
+     if(c%1==0) and (c%2==0) and (c%3==0) and (c%4==0) and (c%5==0)and (c%6==0)and (c%7==0)and (c%8==0)and (c%9==0)and (c%10==0):
+         if (c%11==0) and (c%12==0) and (c%18==0)and (c%17==0)and (c%16==0)and (c%15==0)and (c%14==0)and (c%13==0)and (c%19==0)and (c%20==0):
+             print(c)
+             break
