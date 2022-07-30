@@ -1,0 +1,10 @@
+ quadradoSoma=0
+ somaQuadrado=0
+ for i in range(1,101,1):
+     quadradoSoma += i*i
+     somaQuadrado += i
+ somaQuadrado =  somaQuadrado * somaQuadrado
+ resultado= somaQuadrado - quadradoSoma
+ print(somaQuadrado)
+ print(quadradoSoma)
+ print(resultado)
