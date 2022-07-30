@@ -1,0 +1,13 @@
+ numeros=[]
+ for n1 in range(0, 101, 1):
+     for n2 in range(0, 101, 1):
+         numeros.append(n1*n2)
+
+
+ palindromos=[]
+
+ for item in numeros:
+     if str(item) == str(item)[::-1]:
+         palindromos.append(item)
+
+ print(max(palindromos))
