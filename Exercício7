@@ -1,0 +1,20 @@
+def ePrimo(num):
+    if(num == 0) or (num == 1):
+        return False
+    else:
+        i = num-1
+        for c in range(i,i>=1,-1):
+            if(num%c==0):
+                return False
+    return True
+
+numero = 0
+cont = 0
+while True:
+    if ePrimo(numero):
+        cont+=1
+        print(cont)
+    if (cont==10001):
+        break
+    numero += 1
+print(numero)
