@@ -1,0 +1,6 @@
+numero = 0
+
+ for c in range(0,10):
+     if (c % 3 == 0) or (c % 5 == 0):
+     numero += c
+print(numero)
