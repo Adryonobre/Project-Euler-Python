@@ -1,0 +1,14 @@
+ x=1
+ y=2
+ fibo = []
+ cont = 0
+
+ while(cont < 10):
+     cont += 1
+     fibo.append(x)
+     z = x+y
+     x = y
+     y = z
+
+ par = [a for a in fibo if a%2==0]
+ print(sum(par))
