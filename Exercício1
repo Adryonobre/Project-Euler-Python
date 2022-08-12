@@ -1,6 +1,33 @@
-numero = 0
+"""
+Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23.
 
- for c in range(0,10):
-     if (c % 3 == 0) or (c % 5 == 0):
-     numero += c
-print(numero)
+Encontre a soma de todos os múltiplos de 3 ou 5 abaixo de 1000.
+"""
+
+#Aqui criaremos uma função para encontrar os números que são divisíveis por 3 e 5, onde limite é até qual número ele vai contar
+def multiplosDe3E5(limite):
+    numero = 0
+    
+    #Aqui fazemos um loop para encontrar todos os números até o limite
+    for c in range(0,limite,1):
+    
+        #Aqui fazemos a verificação
+        if (c % 3 == 0) or (c % 5 == 0):
+        
+            #Aqui fazemos a soma
+            numero += c
+    #E por fim é só enviar o número
+    return numero
+
+
+#Aqui criamos uma classe para fazer os testes
+class Testes(unittest.TestCase):
+
+    #Aqui a função que vai fazer o teste, ele deve semore começar com test_
+    def test_multiplos_de_3_e_5_igual_a_233168(self):
+        
+        #Aqui verificamos se com o limite sendo 10 a resposta será 23
+        self.assertEqual(multiplosDe3E5(10), 23)
+
+#Aqui mostramos o resultado, verbosity=2 quer dizer que é para mostrar apenas a resposta do teste
+unittest.main(verbosity=2)       
