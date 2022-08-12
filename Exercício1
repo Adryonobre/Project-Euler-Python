@@ -1,3 +1,6 @@
+#Aqui importamos a biblioteca de testes, ela ja vem com o python
+Import unittest
+
 """
 Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23.
 
@@ -20,7 +23,7 @@ def multiplosDe3E5(limite):
     return numero
 
 
-#Aqui criamos uma classe para fazer os testes
+#Aqui criamos uma classe para fazer os testes, usando a biblioteca importada
 class Testes(unittest.TestCase):
 
     #Aqui a função que vai fazer o teste, ele deve semore começar com test_
@@ -29,5 +32,5 @@ class Testes(unittest.TestCase):
         #Aqui verificamos se com o limite sendo 10 a resposta será 23
         self.assertEqual(multiplosDe3E5(10), 23)
 
-#Aqui mostramos o resultado, verbosity=2 quer dizer que é para mostrar apenas a resposta do teste
+#Aqui mostramos o resultado do teste, verbosity=2 quer dizer que é para mostrar apenas a resposta de onde começa com test_
 unittest.main(verbosity=2)       
