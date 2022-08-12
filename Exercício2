@@ -1,14 +1,52 @@
- x=1
- y=2
- fibo = []
- cont = 0
+#Aqui estamos importando uma biblioteca para fazer testes
+Import unittest
 
- while(cont < 10):
-     cont += 1
-     fibo.append(x)
-     z = x+y
-     x = y
-     y = z
+"""
+Cada novo termo na sequência de Fibonacci é gerado pela adição dos dois termos anteriores. Começando com 1 e 2, os 10 primeiros termos serão:
 
- par = [a for a in fibo if a%2==0]
- print(sum(par))
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+Considerando os termos da sequência de Fibonacci cujos valores não excedem quatro milhões, encontre a soma dos termos de valor par.
+"""
+
+#Criamos uma função para encontrar os números pares de fibonacci, onde "numero" é até qual termo queremos
+def Fibonacci_par(numero):
+    x=1
+    y=2
+    
+    #Criamos uma lista para adicionar os números de fibonacci
+    fibo = []
+    cont = 0
+    
+    #Fazemos um loop até chegar no termo desejado
+    while(cont < numero):
+        cont += 1
+        
+        #Adicionamos O número na lista
+        fibo.append(x)
+        
+        z = x+y
+        x = y
+        y = z
+
+    #Aqui usamos list list comprehension para criar uma lista só com os números pares
+    par = [a for a in fibo if a%2==0]
+    
+    #Aqui fazemos a soma dos números
+    soma = sum(par)
+    
+    #E por fim só enviar o número
+    return soma
+
+
+#Criamos uma classe para fazer os testes usando a biblioteca importada
+class Testes(unittest.TestCase):
+
+    #Aqui criamos a função de teste, a função de teste deve começar com test_
+    def test_soma_par_fibonacci_igual_a_44(self):
+        
+        #Aqui Vamos verificar se até o termo 10, a soma dos números pares vai dar 44
+        self.assertEqual(Fibonacci(10), 44)
+
+#Aqui vamos mostrar o resultado do teste, verbosity=2 quer dizer que queremos executar apenas onde começa com test_
+unittest.main(verbosity=2)
