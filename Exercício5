@@ -1,9 +1,33 @@
- c=0
- cont=0
- maximo=0
- while True:
-     c+=1
-     if(c%1==0) and (c%2==0) and (c%3==0) and (c%4==0) and (c%5==0)and (c%6==0)and (c%7==0)and (c%8==0)and (c%9==0)and (c%10==0):
-         if (c%11==0) and (c%12==0) and (c%18==0)and (c%17==0)and (c%16==0)and (c%15==0)and (c%14==0)and (c%13==0)and (c%19==0)and (c%20==0):
-             print(c)
-             break
+ """
+ 2520 é o menor número que pode ser dividido por cada um dos números de 1 a 10 sem deixar resto.
+
+Qual é o menor número positivo que é divisível por todos os números de 1 a 20?
+ """
+
+#Importamos da biblioteca math a função lcm para encontrarmos um mmc, ja vem com o python
+from math import lcm
+
+#Importamos essa biblioteca para vfazer testes, ja vem com o python
+import unittest
+ 
+#Fazemos uma função para verificar o mmc
+def mmc(numero):
+    
+    #Fazemos um range a partir de 2, para fazer o mmc, e vamos até o numero que foi passado como parâmetro,
+    #usamos o * antes do range para usarmos os números como parâmetros e não range
+    mmc = (lcm(*range(2, numero+1)))
+    
+    #Retornamos o mmc
+    return mmc
+
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class test_mmc(unittest.TestCase):
+
+     #Criamos a função para fazer o teste
+    def test_mmc(self):
+    
+        #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 2520
+        self.assertEqual(mmc(10), 2520)
+
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
