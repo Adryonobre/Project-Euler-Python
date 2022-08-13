@@ -43,8 +43,14 @@ class test_numero_primo(unittest.TestCase):
     #Criamos a função para fazer o teste
     def test_6_numero_primo_igual_13(self):
     
-        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        #Usamos o método para verificar se passando o valor 6 como parâmetro o resultado é igual a 13
         self.assertEqual(numero_primo(6), 13)
+    
+    #Criamos outro teste para confirmar
+    def test_8_numero_primo_igual_19(self):
+        
+        #Usamos o método para verificar se passando o valor 8 como parâmetro o resultado é igual a 19
+        self.assertEqual(numero_primo(8), 19)
 
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
