@@ -1,20 +1,50 @@
-def ePrimo(num):
+"""
+Ao listar os seis primeiros números primos: 2, 3, 5, 7, 11 e 13, podemos ver que o 6º primo é 13.
+
+Qual é o 10 001º número primo?
+"""
+
+ #Aqui importamos a biblioteca que usamos para fazer testes, ela já vem com python  
+ Import unittest
+ 
+ #Criamos uma função para descobrir se o número é primo
+ def ePrimo(num):
     if(num == 0) or (num == 1):
         return False
+    
+    #Aqui verificamos se ele tem algum divisor diferente dele e de 1    
     else:
         i = num-1
         for c in range(i,i>=1,-1):
             if(num%c==0):
                 return False
     return True
+    
+    
+#Criamos a função para encrotar o número primo na posição desejada
+def numero_primo(limite):
+    numero = 0
+    cont = 0
+    
+    #Fazemos um loop para chegar até a posição desejada
+    while True:
+        if ePrimo(numero):
+            cont+=1
+        if (cont==limite):
+            break
+        numero += 1
+       
+    #Retornamos o valor
+    return numero
 
-numero = 0
-cont = 0
-while True:
-    if ePrimo(numero):
-        cont+=1
-        print(cont)
-    if (cont==10001):
-        break
-    numero += 1
-print(numero)
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class test_numero_primo(unittest.TestCase):
+    
+    #Criamos a função para fazer o teste
+    def test_6_numero_primo_igual_13(self):
+    
+        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        self.assertEqual(numero_primo(6), 13)
+
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
