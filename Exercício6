@@ -1,10 +1,49 @@
- quadradoSoma=0
- somaQuadrado=0
- for i in range(1,101,1):
-     quadradoSoma += i*i
-     somaQuadrado += i
- somaQuadrado =  somaQuadrado * somaQuadrado
- resultado= somaQuadrado - quadradoSoma
- print(somaQuadrado)
- print(quadradoSoma)
- print(resultado)
+""""
+A soma dos quadrados dos dez primeiros números naturais é,
+1²+2²+...+10² = 385
+
+O quadrado da soma dos dez primeiros números naturais é,
+(1+2+...+10)² = 3025
+
+Portanto, a diferença entre a soma dos quadrados dos dez primeiros números naturais e o quadrado da soma é
+3025 - 385 = 2640
+
+Encontre a diferença entre a soma dos quadrados dos primeiros cem números naturais e o quadrado da soma.
+
+"""
+
+ #Aqui importamos a biblioteca que usamos para fazer testes, ela já vem com python  
+ Import unittest
+
+#Criamos a função para achar a diferença dos quadrados
+def diferenca_quadrados(limite):
+    quadradoSoma=0
+    somaQuadrado=0
+    
+    #Faremos um loop até o parâmetro passado para acharmos a diferença
+    for i in range(1,limite+1,1):
+        
+        #Fazemos o calculo para chegar na soma do quadrado
+        quadradoSoma += i*i
+        somaQuadrado += i
+    
+    #Fazemos o calculo para achar o quadrado da soma
+    somaQuadrado =  somaQuadrado * somaQuadrado
+    
+    #E aqui achamos a diferença
+    resultado = somaQuadrado - quadradoSoma
+    
+    #E agora retornamos a diferença
+    return resultado
+
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class test_diferenca_quadrado(unittest.TestCase):
+
+    #Criamos a função para fazer o teste
+    def test_diferenca_tem_que_ser_2640(self):
+    
+        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        self.assertEqual(diferenca_quadrados(10), 2640)
+        
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
