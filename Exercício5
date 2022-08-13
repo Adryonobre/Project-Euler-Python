@@ -24,10 +24,16 @@ def mmc(numero):
 class test_mmc(unittest.TestCase):
 
      #Criamos a função para fazer o teste
-    def test_mmc(self):
+    def test_divisivel_ate_10_deve_ser_2520(self):
     
         #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 2520
         self.assertEqual(mmc(10), 2520)
+        
+    #Criamos outra função para confirmar
+    def test_divisivel_ate_5_deve_ser_60(self):
+        
+        #Usamos o método para verificar se passando o valor 5 como parâmetro o resultado é igual a 60
+        self.assertEqual(mmc(5), 60)
 
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
