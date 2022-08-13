@@ -63,6 +63,12 @@ class Test_maior_sequencia(unittest.TestCase):
     
         #Usamos o método para verificar se passando o valor 4 como parâmetro o resultado é igual a 5832
         self.assertEqual(maior_sequencia(4), 5832)
+    
+    #Criamos outro teste para confirmar
+    def test_sequencia_de_2_numeros_igual_a_81(self):
+    
+        #Usamos o método para verificar se passando o valor 2 como parâmetro o resultado é igual a 81
+        self.assertEqual(maior_sequencia(2), 81)
         
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)        
