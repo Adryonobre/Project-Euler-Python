@@ -1,6 +1,18 @@
+ """
+ Os fatores primos de 13195 são 5, 7, 13 e 29.
+
+Qual é o maior fator primo do número 600851475143?
+ """
+ 
+ #Aqui importamos a biblioteca que usamos para fazer testes, ela já vem com python  
+ Import unittest
+ 
+ #Criamos uma função para descobrir se o número é primo
  def ePrimo(num):
     if(num == 0) or (num == 1):
         return False
+    
+    #Aqui verificamos se ele tem algum divisor diferente dele e de 1    
     else:
         i = num-1
         for c in range(i,i>=1,-1):
@@ -8,14 +20,37 @@
                 return False
     return True
  
- 
- numero = 600851475143
- numero2 = 13195
- fator= []
- for c in range(numero, numero<1, -1):
-     if (numero%c==0) and (ePrimo(c)):
-         fator.append(c)
-         print(c)
+#Criamos uma função para achar o maior fatorial
+def fatores(numero):
+    volta=0
+    
+    #Criamos uma lista para adicionar os numeros fatoriais
+    fator= []
+    
+    #Fazemos um loop para percorrer o número e achar seus faotiais
+    for c in range(numero, numero<1, -1):
+        
+        #Verificamos se é fatorial e se é primo
+        if (numero%c==0) and (ePrimo(c)):
+        
+            #Então adicionamos na lista
+            fator.append(c)
+
+    #Aqui pegamos o maior fatorial primo
+    maximo = max(fator)
+    
+    #Então retornamos ele
+    return maximo
 
 
- print(max(fator))
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class Testes(unittest.TestCase):
+
+    #Criamos a função para fazer o teste
+    def test_fatorial_13195_devem_dar_29(self):
+    
+        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        self.assertEqual(fatores(13195),29)
+        
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
