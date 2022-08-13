@@ -46,5 +46,11 @@ class test_numero_primo(unittest.TestCase):
         #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 17
         self.assertEqual(numero_primos(10), 17)
         
+      #Criamos outro teste para confirmar
+      def test_soma_numero_primo_menor_que_20_deve_dar_70(self):
+      
+         #Usamos o método para verificar se passando o valor 20 como parâmetro o resultado é igual a 77
+         self.assertEqual(numero_primos(20), 77)
+        
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)        
