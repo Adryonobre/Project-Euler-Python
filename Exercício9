@@ -39,8 +39,14 @@ class test_pitagoras(unittest.TestCase):
     #Criamos a função para fazer o teste
     def test_pitagoras_c_maior_b_maior_a(self):
         
-        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        #Usamos o método para verificar se passando o valor 1000 como parâmetro o resultado é igual a 31875000.0
         self.assertEqual(pitagoras(1000), 31875000.0)
+        
+    #Criamos outro teste para confirmar
+    def test_pitagoras_C_maior_b_maior_a_igual_a_12_deve_dar_60(self):
+    
+        #Usamos o método para verificar se passando o valor 12 como parâmetro o resultado é igual a 60
+        self.assertEqual(pitagoras(12), 60)
         
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
