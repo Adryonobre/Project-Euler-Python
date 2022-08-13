@@ -1,13 +1,51 @@
- numeros=[]
- for n1 in range(0, 101, 1):
-     for n2 in range(0, 101, 1):
-         numeros.append(n1*n2)
+"""
+Um número palindrômico lê da mesma forma nos dois sentidos. O maior palíndromo feito do produto de dois números de 2 dígitos é 9009 = 91 × 99.
 
+Encontre o maior palíndromo feito do produto de dois números de 3 algarismos.
+"""
 
- palindromos=[]
+#Importamos a biblioteca para fazer testes, ela ja vem com python
+Import unittest
 
- for item in numeros:
-     if str(item) == str(item)[::-1]:
-         palindromos.append(item)
+#Criamos a função para achar o maior palindromo até o total de algarismos desejado
+def maior_palindromos(numero):
 
- print(max(palindromos))
+    #Criamos uma lista para armazenar a multiplicação
+    numeros=[]
+    
+    #Criamos um loop dentro de outro para fazer a multiplicação de um pelo outro
+    for n1 in range(0, numero+1, 1):
+        for n2 in range(0, numero+1, 1):
+        
+            #Adicionamos a multilicação na lista
+            numeros.append(n1*n2)
+
+    #Aqui vamos criar a lista para armazenar os palindromos
+    palindromos=[]
+ 
+    #Vamos fazer um loop para percorrer todos os itens da lista "numeros"
+    for item in numeros:
+        
+        #Verificamos se o número é um palindromo, transformamos em uma string temporaria para podermos inverter na hora da verificação
+        if str(item) == str(item)[::-1]:
+            
+            #Se for um palindromo adicionamos na lista palindromos
+            palindromos.append(item)
+
+    #Pegamos o maior palindromo dentro do limite escolhido
+    maior = max(palindromos)
+    
+    #Retornamos o maior palindromo
+    return maior
+
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class test_palindromo(unittest.TestCase):
+    
+    #Vamos testar se o palindromo desejado esta certo
+    def test_palindromos(self):
+    
+        #Usamos o método para verificar se passando o valor 100 como parâmetro o resultado é igual a 9009
+        self.assertEqual(maior_palindromos(100), 9009)
+        
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
