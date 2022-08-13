@@ -51,6 +51,12 @@ class Testes(unittest.TestCase):
     
         #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
         self.assertEqual(fatores(13195),29)
+    
+    #Criamos outro teste para confirmar
+    def test_fatorial_10_deve_ser_5(self):
+    
+        #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 5
+        self.assertEqual(fatores(10), 5)
         
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
