@@ -42,10 +42,16 @@ def maior_palindromos(numero):
 class test_palindromo(unittest.TestCase):
     
     #Vamos testar se o palindromo desejado esta certo
-    def test_palindromos(self):
+    def test_palindromos_de_2_numeros_deve_dar_9009(self):
     
         #Usamos o método para verificar se passando o valor 100 como parâmetro o resultado é igual a 9009
         self.assertEqual(maior_palindromos(100), 9009)
+    
+    #Criamos Outro teste para confirmar
+    def test_palindromo_ate_de_3_numeros_deve_dar_906609(self):
+    
+        #Usamos o método para verificar se passando o valor 1000 como parâmetro o resultado é igual a 906609
+        self.assertEqual(maior_palindromos(1000), 906609)
         
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
