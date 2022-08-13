@@ -45,7 +45,7 @@ class Testes(unittest.TestCase):
     #Aqui criamos a função de teste, a função de teste deve começar com test_
     def test_soma_par_fibonacci_igual_a_44(self):
         
-        #Aqui Vamos verificar se até o termo 10, a soma dos números pares vai dar 44
+        #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 44
         self.assertEqual(Fibonacci(10), 44)
 
 #Aqui vamos mostrar o resultado do teste, verbosity=2 quer dizer que queremos executar apenas onde começa com test_
