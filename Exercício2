@@ -43,10 +43,16 @@ def Fibonacci_par(numero):
 class Testes(unittest.TestCase):
 
     #Aqui criamos a função de teste, a função de teste deve começar com test_
-    def test_soma_par_fibonacci_igual_a_44(self):
+    def test_soma_par_dos_10_primeiros_numeros_de_fibonacci_igual_a_44(self):
         
         #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 44
         self.assertEqual(Fibonacci(10), 44)
+    
+    #Criamos outro teste para confirmar
+    def test_soma_par_dos_5_primeiros_numeros_de_fibonacci_deve_dar_10(self):
+        
+        #Usamos o método para verificar se passando o valor 5 como parâmetro o resultado é igual a 10
+        self.assertEqual(Fibonacci(5),10)
 
 #Aqui vamos mostrar o resultado do teste, verbosity=2 quer dizer que queremos executar apenas onde começa com test_
 unittest.main(verbosity=2)
