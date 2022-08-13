@@ -42,8 +42,15 @@ class test_diferenca_quadrado(unittest.TestCase):
     #Criamos a função para fazer o teste
     def test_diferenca_tem_que_ser_2640(self):
     
-        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 2640
         self.assertEqual(diferenca_quadrados(10), 2640)
+    
+    
+    #Criamos outro teste para confirmar
+    def test_diferenca_dos_5_deve_ser_165(self):
+        
+        #Usamos o método para verificar se passando o valor 5 como parâmetro o resultado é igual a 170
+        self.assertEqual(diferenca_quadrados(5), 170)
         
 #Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
 unittest.main(verbosity=2)
