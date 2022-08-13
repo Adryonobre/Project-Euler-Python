@@ -1,8 +1,46 @@
-for b in range(0, 1000):
-    for a in range(0, b):
-        c = math.sqrt(a**2 + b**2)
-        if (a + b + c == 1000):
-             resultado = a * b * c
-             print(resultado)
-             print(a,b,c)
-             break
+"""
+Um trio pitagórico é um conjunto de três números naturais, a < b < c , para os quais,
+
+a² + b² = c²
+Por exemplo, 3² + 4² = 9 + 16 = 25 = 5² .
+
+Existe exatamente uma trinca pitagórica para a qual a + b + c = 1000.
+Encontre o produto abc .
+"""
+
+#Aqui importamos a biblioteca que usamos para fazer testes, ela já vem com python  
+Import unittest
+
+#Criamos uma função para fazer pitagoras
+def pitagoras(igual):
+    resultado = 0
+    
+    #Faremos um loop para encrontar b já que b>a, e deposi encontraremos o a
+    for b in range(0, igual):
+        for a in range(0, b):
+            
+            #Aplicamos pitagoras
+            c = math.sqrt(a**2 + b**2)
+            
+            #Fazemos a verificação para saber se está de acordo como enunciado
+            if (a + b + c == igual) and a<b<c:
+                 resultado = a * b * c
+                 break
+    #Caso o número não faça parte do conjunto
+    if resultado == 0:
+        print("Esse número não possue um conjunto de a<b<c")
+        
+    #Retornamos o resultado
+    return resultado
+
+#Aqui fazemos os testes usando a biblioteca importada, utilizamos TestCase para conseguir fazer os testes, pois precisamos dos seus métodos
+class test_pitagoras(unittest.TestCase):
+
+    #Criamos a função para fazer o teste
+    def test_pitagoras_c_maior_b_maior_a(self):
+        
+        #Usamos o método para verificar se passando o valor 13195 como parâmetro o resultado é igual a 29
+        self.assertEqual(pitagoras(1000), 31875000.0)
+        
+#Usamos esse código para exibir os testes, usamos o verbosity=2 para mostrar apenas o resultado das funções que começam com test_
+unittest.main(verbosity=2)
