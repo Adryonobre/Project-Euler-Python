@@ -27,10 +27,16 @@ def multiplosDe3E5(limite):
 class Testes(unittest.TestCase):
 
     #Aqui a função que vai fazer o teste, ele deve semore começar com test_
-    def test_multiplos_de_3_e_5_igual_a_233168(self):
+    def test_multiplos_de_3_e_5_ate_10_igual_a_233168(self):
         
-        ##Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 23
+        #Usamos o método para verificar se passando o valor 10 como parâmetro o resultado é igual a 23
         self.assertEqual(multiplosDe3E5(10), 23)
+   
+   #Criamos outro teste para confirmar
+    def test_multiplos_de_3_e_5_ate_100_igual_a_2318(self):
+    
+        #Usamos o método para verificar se passando o valor 100 como parâmetro o resultado é igual a 2318
+        self.assertEqual(multiplosDe3E5(100), 2318)
 
 #Aqui mostramos o resultado do teste, verbosity=2 quer dizer que queremos executar apenas onde começa com test_
 unittest.main(verbosity=2)       
